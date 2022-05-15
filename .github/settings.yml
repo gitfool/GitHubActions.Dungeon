@@ -1,0 +1,14 @@
+# https://github.com/probot/settings
+
+# https://github.com/gitfool/.github/blob/main/.github/settings.yml
+_extends: .github
+
+branches:
+  - name: main
+    protection:
+      required_status_checks:
+        contexts:
+          - build-docker
+          - build-linux
+          - build-mac
+          - build-windows

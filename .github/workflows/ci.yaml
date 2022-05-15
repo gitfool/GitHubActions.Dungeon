@@ -1,0 +1,123 @@
+name: ci
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  CAKE_SETTINGS_ENABLESCRIPTCACHE: true
+  CAKE_SETTINGS_SHOWPROCESSCOMMANDLINE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_NOLOGO: true
+  DOTNET_ROLL_FORWARD: Major
+
+jobs:
+  build-docker:
+    needs: [ build-linux, build-mac, build-windows ]
+    runs-on: ubuntu-latest
+    container: dockfool/cake-docker:latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Show contexts
+        run: |
+          # show contexts
+          echo '# github'
+          echo '${{ toJSON(github) }}'
+          echo '# runner'
+          echo '${{ toJSON(runner) }}'
+          echo '# job'
+          echo '${{ toJSON(job) }}'
+
+      - name: Cake build
+        run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Show contexts
+        run: |
+          # show contexts
+          echo '# github'
+          echo '${{ toJSON(github) }}'
+          echo '# runner'
+          echo '${{ toJSON(runner) }}'
+          echo '# job'
+          echo '${{ toJSON(job) }}'
+
+      - name: Install dotnet
+        uses: actions/setup-dotnet@v2.1.0
+        with:
+          # renovate: datasource=docker depName=dotnet-sdk packageName=mcr.microsoft.com/dotnet/sdk
+          dotnet-version: 6.0.300
+
+      - name: Cake build
+        run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
+
+  build-mac:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Show contexts
+        run: |
+          # show contexts
+          echo '# github'
+          echo '${{ toJSON(github) }}'
+          echo '# runner'
+          echo '${{ toJSON(runner) }}'
+          echo '# job'
+          echo '${{ toJSON(job) }}'
+
+      - name: Install dotnet
+        uses: actions/setup-dotnet@v2.1.0
+        with:
+          # renovate: datasource=docker depName=dotnet-sdk packageName=mcr.microsoft.com/dotnet/sdk
+          dotnet-version: 6.0.300
+
+      - name: Cake build
+        run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Show contexts
+        run: |
+          # show contexts
+          echo '# github'
+          echo '${{ toJSON(github) }}'
+          echo '# runner'
+          echo '${{ toJSON(runner) }}'
+          echo '# job'
+          echo '${{ toJSON(job) }}'
+
+      - name: Install dotnet
+        uses: actions/setup-dotnet@v2.1.0
+        with:
+          # renovate: datasource=docker depName=dotnet-sdk packageName=mcr.microsoft.com/dotnet/sdk
+          dotnet-version: 6.0.300
+
+      - name: Cake build
+        run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
