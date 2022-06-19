@@ -26,14 +26,16 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        run: |
-          # show contexts
-          echo '# github'
-          echo '${{ toJSON(github) }}'
-          echo '# runner'
-          echo '${{ toJSON(runner) }}'
-          echo '# job'
-          echo '${{ toJSON(job) }}'
+        uses: actions/github-script@v6.1.0
+        with:
+          script: |
+            // show contexts
+            const contexts = {
+              github: ${{ toJSON(github) }},
+              runner: ${{ toJSON(runner) }},
+              job: ${{ toJSON(job) }}
+            };
+            console.log(JSON.stringify(contexts, null, 2));
 
       - name: Cake build
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
@@ -48,14 +50,16 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        run: |
-          # show contexts
-          echo '# github'
-          echo '${{ toJSON(github) }}'
-          echo '# runner'
-          echo '${{ toJSON(runner) }}'
-          echo '# job'
-          echo '${{ toJSON(job) }}'
+        uses: actions/github-script@v6.1.0
+        with:
+          script: |
+            // show contexts
+            const contexts = {
+              github: ${{ toJSON(github) }},
+              runner: ${{ toJSON(runner) }},
+              job: ${{ toJSON(job) }}
+            };
+            console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
         uses: actions/setup-dotnet@v2.1.0
@@ -76,14 +80,16 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        run: |
-          # show contexts
-          echo '# github'
-          echo '${{ toJSON(github) }}'
-          echo '# runner'
-          echo '${{ toJSON(runner) }}'
-          echo '# job'
-          echo '${{ toJSON(job) }}'
+        uses: actions/github-script@v6.1.0
+        with:
+          script: |
+            // show contexts
+            const contexts = {
+              github: ${{ toJSON(github) }},
+              runner: ${{ toJSON(runner) }},
+              job: ${{ toJSON(job) }}
+            };
+            console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
         uses: actions/setup-dotnet@v2.1.0
@@ -104,14 +110,16 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        run: |
-          # show contexts
-          echo '# github'
-          echo '${{ toJSON(github) }}'
-          echo '# runner'
-          echo '${{ toJSON(runner) }}'
-          echo '# job'
-          echo '${{ toJSON(job) }}'
+        uses: actions/github-script@v6.1.0
+        with:
+          script: |
+            // show contexts
+            const contexts = {
+              github: ${{ toJSON(github) }},
+              runner: ${{ toJSON(runner) }},
+              job: ${{ toJSON(job) }}
+            };
+            console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
         uses: actions/setup-dotnet@v2.1.0
