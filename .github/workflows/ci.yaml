@@ -30,7 +30,7 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.1.0
+        uses: actions/github-script@v6.1.1
         with:
           script: |
             // show contexts
@@ -54,7 +54,7 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.1.0
+        uses: actions/github-script@v6.1.1
         with:
           script: |
             // show contexts
@@ -84,7 +84,7 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.1.0
+        uses: actions/github-script@v6.1.1
         with:
           script: |
             // show contexts
@@ -114,7 +114,7 @@ jobs:
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.1.0
+        uses: actions/github-script@v6.1.1
         with:
           script: |
             // show contexts
