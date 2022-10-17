@@ -68,7 +68,7 @@ jobs:
       - name: Install dotnet
         uses: actions/setup-dotnet@v3.0.2
         with:
-          # renovate: datasource=docker depName=dotnet-sdk packageName=mcr.microsoft.com/dotnet/sdk
+          # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 6.0.400
 
       - name: Cake build
@@ -98,7 +98,7 @@ jobs:
       - name: Install dotnet
         uses: actions/setup-dotnet@v3.0.2
         with:
-          # renovate: datasource=docker depName=dotnet-sdk packageName=mcr.microsoft.com/dotnet/sdk
+          # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 6.0.400
 
       - name: Cake build
@@ -128,7 +128,7 @@ jobs:
       - name: Install dotnet
         uses: actions/setup-dotnet@v3.0.2
         with:
-          # renovate: datasource=docker depName=dotnet-sdk packageName=mcr.microsoft.com/dotnet/sdk
+          # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 6.0.400
 
       - name: Cake build
