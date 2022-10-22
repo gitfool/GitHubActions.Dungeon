@@ -24,13 +24,13 @@ jobs:
     container: dockfool/cake-docker:latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.2.0
+        uses: actions/github-script@v6.3.3
         with:
           script: |
             // show contexts
@@ -48,13 +48,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.2.0
+        uses: actions/github-script@v6.3.3
         with:
           script: |
             // show contexts
@@ -69,7 +69,7 @@ jobs:
         uses: actions/setup-dotnet@v3.0.2
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 6.0.400
+          dotnet-version: 6.0.402
 
       - name: Cake build
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
@@ -78,13 +78,13 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.2.0
+        uses: actions/github-script@v6.3.3
         with:
           script: |
             // show contexts
@@ -99,7 +99,7 @@ jobs:
         uses: actions/setup-dotnet@v3.0.2
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 6.0.400
+          dotnet-version: 6.0.402
 
       - name: Cake build
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
@@ -108,13 +108,13 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
           submodules: recursive
 
       - name: Show contexts
-        uses: actions/github-script@v6.2.0
+        uses: actions/github-script@v6.3.3
         with:
           script: |
             // show contexts
@@ -129,7 +129,7 @@ jobs:
         uses: actions/setup-dotnet@v3.0.2
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 6.0.400
+          dotnet-version: 6.0.402
 
       - name: Cake build
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
