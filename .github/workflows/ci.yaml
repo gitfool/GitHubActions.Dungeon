@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 env:
-  CAKE_SETTINGS_ENABLESCRIPTCACHE: true
-  CAKE_SETTINGS_SHOWPROCESSCOMMANDLINE: true
+  Cake_Settings_EnableScriptCache: true
+  Cake_Settings_ShowProcessCommandLine: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_NOLOGO: true
   DOTNET_ROLL_FORWARD: Major
@@ -42,7 +42,19 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Cake build
+        id: cake
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
+
+      - name: Show outputs
+        uses: actions/github-script@v6.3.3
+        with:
+          script: |
+            // show outputs
+            const json = ${{ steps.cake.outputs.json }};
+            console.log("json:");
+            console.log(JSON.stringify(json, null, 2));
+            console.log("public: ${{ steps.cake.outputs.public }}");
+            console.log("version: ${{ steps.cake.outputs.version }}");
 
   build-linux:
     runs-on: ubuntu-latest
@@ -72,7 +84,19 @@ jobs:
           dotnet-version: 7.0.100
 
       - name: Cake build
+        id: cake
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
+
+      - name: Show outputs
+        uses: actions/github-script@v6.3.3
+        with:
+          script: |
+            // show outputs
+            const json = ${{ steps.cake.outputs.json }};
+            console.log("json:");
+            console.log(JSON.stringify(json, null, 2));
+            console.log("public: ${{ steps.cake.outputs.public }}");
+            console.log("version: ${{ steps.cake.outputs.version }}");
 
   build-mac:
     runs-on: macos-latest
@@ -102,7 +126,19 @@ jobs:
           dotnet-version: 7.0.100
 
       - name: Cake build
+        id: cake
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
+
+      - name: Show outputs
+        uses: actions/github-script@v6.3.3
+        with:
+          script: |
+            // show outputs
+            const json = ${{ steps.cake.outputs.json }};
+            console.log("json:");
+            console.log(JSON.stringify(json, null, 2));
+            console.log("public: ${{ steps.cake.outputs.public }}");
+            console.log("version: ${{ steps.cake.outputs.version }}");
 
   build-windows:
     runs-on: windows-latest
@@ -132,4 +168,16 @@ jobs:
           dotnet-version: 7.0.100
 
       - name: Cake build
+        id: cake
         run: dotnet tool restore && dotnet cake --target=info --verbosity=verbose
+
+      - name: Show outputs
+        uses: actions/github-script@v6.3.3
+        with:
+          script: |
+            // show outputs
+            const json = ${{ steps.cake.outputs.json }};
+            console.log("json:");
+            console.log(JSON.stringify(json, null, 2));
+            console.log("public: ${{ steps.cake.outputs.public }}");
+            console.log("version: ${{ steps.cake.outputs.version }}");
