@@ -24,7 +24,7 @@ jobs:
     container: dockfool/cake-docker:latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
           filter: tree:0
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
           filter: tree:0
@@ -80,7 +80,7 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v4.0.1
+        uses: actions/setup-dotnet@v4.1.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 8.0.403
@@ -104,7 +104,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
           filter: tree:0
@@ -123,7 +123,7 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v4.0.1
+        uses: actions/setup-dotnet@v4.1.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 8.0.403
@@ -147,7 +147,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
           filter: tree:0
@@ -166,7 +166,7 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v4.0.1
+        uses: actions/setup-dotnet@v4.1.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 8.0.403
