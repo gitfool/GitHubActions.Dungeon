@@ -83,7 +83,7 @@ jobs:
         uses: actions/setup-dotnet@v4.3.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 8.0.405
+          dotnet-version: 9.0.102
 
       - name: Cake build
         id: cake
@@ -126,7 +126,7 @@ jobs:
         uses: actions/setup-dotnet@v4.3.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 8.0.405
+          dotnet-version: 9.0.102
 
       - name: Cake build
         id: cake
@@ -169,7 +169,7 @@ jobs:
         uses: actions/setup-dotnet@v4.3.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 8.0.405
+          dotnet-version: 9.0.102
 
       - name: Cake build
         id: cake
