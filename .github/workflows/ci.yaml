@@ -80,7 +80,7 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v4.3.1
+        uses: actions/setup-dotnet@v5.0.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 9.0.202
@@ -123,7 +123,7 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v4.3.1
+        uses: actions/setup-dotnet@v5.0.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 9.0.202
@@ -166,7 +166,7 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v4.3.1
+        uses: actions/setup-dotnet@v5.0.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
           dotnet-version: 9.0.202
