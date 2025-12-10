@@ -24,7 +24,7 @@ jobs:
     container: dockfool/cake-docker:latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v6.0.0
+        uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
           filter: tree:0
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v6.0.0
+        uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
           filter: tree:0
@@ -80,10 +80,10 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v5.0.0
+        uses: actions/setup-dotnet@v5.0.1
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 10.0.100
+          dotnet-version: 10.0.101
 
       - name: Cake build
         id: cake
@@ -104,7 +104,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v6.0.0
+        uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
           filter: tree:0
@@ -123,10 +123,10 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v5.0.0
+        uses: actions/setup-dotnet@v5.0.1
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 10.0.100
+          dotnet-version: 10.0.101
 
       - name: Cake build
         id: cake
@@ -147,7 +147,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v6.0.0
+        uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
           filter: tree:0
@@ -166,10 +166,10 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v5.0.0
+        uses: actions/setup-dotnet@v5.0.1
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 10.0.100
+          dotnet-version: 10.0.101
 
       - name: Cake build
         id: cake
