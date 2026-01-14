@@ -80,10 +80,10 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v5.0.1
+        uses: actions/setup-dotnet@v5.1.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 10.0.101
+          dotnet-version: 10.0.102
 
       - name: Cake build
         id: cake
@@ -123,10 +123,10 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v5.0.1
+        uses: actions/setup-dotnet@v5.1.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 10.0.101
+          dotnet-version: 10.0.102
 
       - name: Cake build
         id: cake
@@ -166,10 +166,10 @@ jobs:
             console.log(JSON.stringify(contexts, null, 2));
 
       - name: Install dotnet
-        uses: actions/setup-dotnet@v5.0.1
+        uses: actions/setup-dotnet@v5.1.0
         with:
           # renovate: datasource=dotnet depName=dotnet-sdk
-          dotnet-version: 10.0.101
+          dotnet-version: 10.0.102
 
       - name: Cake build
         id: cake
